@@ -1,0 +1,65 @@
+.container {
+  padding: 20px;
+}
+
+.container label {
+  width: 100%;
+  display: inline-block;
+}
+
+.competitorList span {
+  font-size: 14px;
+  margin-right: 20px;  
+  line-height: 25px;
+}
+
+
+.competitorList img.countryImg {
+  vertical-align: middle;
+}
+
+.competitorList span.points {
+  width: 40px;
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: #7b889e;
+  opacity: 0.8;
+  z-index: 10000;
+ 
+}
+
+.loader img {
+  margin: auto;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  height: 120px;
+
+}
+
+.loader.hide {
+  display: none;
+}
+
+.find-input {
+  margin-left: 30px;
+}
+
+div.infoRow label {
+  width: auto;
+  font-weight: 700;
+}
+
+img.countryImgBig {
+  margin-left: 20px;
+}
+
+span.countrySpan {
+  margin-left: 40px;
+}
