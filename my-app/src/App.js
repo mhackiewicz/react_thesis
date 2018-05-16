@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  HashRouter,
   Link
 } from 'react-router-dom';
 
@@ -13,12 +14,12 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div className="App">
           <Route exact path="/" component={CompetitorsList} />
           <Route path="/details/:id" component={Details} />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

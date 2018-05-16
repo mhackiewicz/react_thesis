@@ -121,6 +121,7 @@ class CompetitorsList extends Component {
     
 
    getData = (data) => {
+    let vm = this;
     let params = {
       access_token: '1c20687f659883d14ef965b0bd94531c39821ef0',
       'params[_ust]': ''
@@ -141,8 +142,13 @@ class CompetitorsList extends Component {
           params: params
         })
         .then(res => {
-          resolve(res)
-           console.timeEnd("Get data")
+          resolve(res);
+           console.timeEnd("Get data");
+        }).catch(function (error) {
+          vm.hideLoader();
+          reject();
+          console.timeEnd("Get data");
+          console.log(error);
         });
     });
   }
