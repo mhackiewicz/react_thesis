@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import axios from 'axios';
 import { Toolbar, IconToggle } from 'react-native-material-ui';
+import 'react-native-console-time-polyfill';
 
 
 export default class Details extends React.Component {
@@ -63,7 +64,7 @@ export default class Details extends React.Component {
           <Text>Fav. Technique: {this.state.competitor.ftechique}</Text>
           <Text>Belt. Technique: {this.state.competitor.belt}</Text>
           <Image source={{ uri: `https://judobase.ijf.org/assets/img/flags/r-80x60/${this.state.competitor.country_short ? this.state.competitor.country_short.toLowerCase() : 'blank'}.png` }} />
-          <Text{this.state.competitor.country_short</Text>
+          <Text>{this.state.competitor.country_short}</Text>
         </View>
       );
     }

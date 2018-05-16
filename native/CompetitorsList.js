@@ -3,11 +3,14 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    FlatList
 } from 'react-native';
 import axios from 'axios';
 import loader from './assets/images/loader.svg';
 import CompetitorItem from './CompetitorItem'; 
+import 'react-native-console-time-polyfill';
+import { Toolbar } from 'react-native-material-ui';
 
 export default class CompetitorsList extends React.Component {
     state = {
@@ -37,7 +40,7 @@ export default class CompetitorsList extends React.Component {
                 groupby: 'gender'
             })
         ]).then(function(values) {
-            console.log('values', values);
+           
             vm.setState({
                 countries: values[0].data
             })
@@ -212,17 +215,25 @@ export default class CompetitorsList extends React.Component {
         });
     }
     render() {
+        
         return ( 
         	<View style = {styles.container}> 
-        		{this.state.competitors.map((competitor,index) => (
-                  <CompetitorItem key={index} competitor={competitor} index={index} />
-                ))}
-              </List>
-              <h3>{this.state.competitors.length === 0 ? 'no result': ''}</h3>
+              <Toolbar
+                centerElement="Judo Ranking"  />
+        		
+                <FlatList 
+                    data={this.state.competitors}
+                    renderItem={({item,index}) =>  <CompetitorItem key={index} competitor={item} index={index} />}
+                    ListEmptyComponent={<Text>no result</Text>}
+                />
+              
+              
         	</View>
         );
     }
 }
+
+//<CompetitorItem key={index} competitor={competitor} index={index} />
 const styles = StyleSheet.create({
     container: {
         flex: 1,
