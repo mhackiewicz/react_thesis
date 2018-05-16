@@ -7,8 +7,3 @@ My master thesis on mobile applications in web technology using the reactjs libr
 * pwa - pwa app (https://judo-ranking.herokuapp.com/)
 * native - react native app
 * my-app - basic react app
-
-
-
-
-
